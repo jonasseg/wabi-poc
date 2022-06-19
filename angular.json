@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "wabi-poc-app": "apps/wabi-poc-app",
+    "wabi-poc-app-e2e": "apps/wabi-poc-app-e2e"
+  }
+}
