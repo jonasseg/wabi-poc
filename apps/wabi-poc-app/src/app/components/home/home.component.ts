@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit, OnDestroy {
             label: item.name,
             id: item.id,
             parentId: item.parentId,
-            items: [],
           };
           acc[itemChangeValue.id] = acc[itemChangeValue.id] || {};
           acc[itemChangeValue.id] = itemChangeValue;
@@ -42,7 +41,10 @@ export class HomeComponent implements OnInit, OnDestroy {
             acc[itemChangeValue.parentId].id
           ) {
             const itemChangeValue2 = acc[itemChangeValue.id];
-            acc[itemChangeValue.parentId].items.push(itemChangeValue2);
+            (acc[itemChangeValue.parentId]['items'] =
+              acc[itemChangeValue.parentId]['items'] || []).push(
+              itemChangeValue2
+            );
           }
           return acc;
         }, Object.create(null));
