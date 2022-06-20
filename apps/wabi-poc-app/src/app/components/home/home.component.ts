@@ -35,14 +35,9 @@ export class HomeComponent implements OnInit, OnDestroy {
           acc[itemChangeValue.id] = acc[itemChangeValue.id] || {};
           acc[itemChangeValue.id] = itemChangeValue;
 
-          if (
-            itemChangeValue.parentId &&
-            acc[itemChangeValue.parentId] &&
-            acc[itemChangeValue.parentId].id
-          ) {
+          if (itemChangeValue.parentId && acc[itemChangeValue.parentId] && acc[itemChangeValue.parentId].id) {
             const itemChangeValue2 = acc[itemChangeValue.id];
-            (acc[itemChangeValue.parentId]['items'] =
-              acc[itemChangeValue.parentId]['items'] || []).push(
+            (acc[itemChangeValue.parentId]['items'] = acc[itemChangeValue.parentId]['items'] || []).push(
               itemChangeValue2
             );
           }

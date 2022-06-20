@@ -16,8 +16,7 @@ import { StoreModule } from '@ngrx/store';
 import { MENU_FEATURE_KEY, reducer } from '@wabi-poc/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-const createTranslateLoader = (http: HttpClient) =>
-  new TranslateHttpLoader(http, './assets/i18n/', '.json');
+const createTranslateLoader = (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
 const appReducers = {
   [MENU_FEATURE_KEY]: reducer,
@@ -47,10 +46,7 @@ const appReducers = {
     EffectsModule.forRoot([]),
     environment.devTools,
   ],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
-    getAppConfigProvider(environment),
-  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, getAppConfigProvider(environment)],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

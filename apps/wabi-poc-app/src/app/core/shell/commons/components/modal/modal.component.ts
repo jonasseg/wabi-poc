@@ -68,13 +68,11 @@ export class ModalComponent implements OnInit, OnDestroy {
       }, 0);
     });
 
-    this.modalService.spinner$.subscribe(
-      (spinner: { text: string; load: boolean }) => {
-        setTimeout(() => {
-          this.spinner = spinner;
-        }, 0);
-      }
-    );
+    this.modalService.spinner$.subscribe((spinner: { text: string; load: boolean }) => {
+      setTimeout(() => {
+        this.spinner = spinner;
+      }, 0);
+    });
 
     this.modalService.bodyContainer$
       .pipe(filter((component) => !!component))
@@ -82,10 +80,7 @@ export class ModalComponent implements OnInit, OnDestroy {
         setTimeout(() => {
           try {
             this.bodyContainer.clear();
-            const factory =
-              this.componentFactoryResolver.resolveComponentFactory(
-                component.component
-              );
+            const factory = this.componentFactoryResolver.resolveComponentFactory(component.component);
             const cp = this.bodyContainer.createComponent(factory);
             cp.instance.data = component.data;
           } catch (error) {

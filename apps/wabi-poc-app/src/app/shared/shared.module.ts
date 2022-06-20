@@ -5,12 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedMaterialModule } from '@wabi-poc/shared/material';
 import { SharedPrimengModule } from '@wabi-poc/shared/primeng';
 
-const modules = [
-  CommonModule,
-  TranslateModule,
-  FormsModule,
-  ReactiveFormsModule,
-];
+const modules = [CommonModule, TranslateModule, FormsModule, ReactiveFormsModule];
 
 const modulesMaterial: any = [SharedMaterialModule];
 
@@ -27,13 +22,6 @@ const pipes: any = [];
   declarations: [...components, ...pipes, ...directives],
   providers: [...pipes],
   entryComponents: [],
-  exports: [
-    ...components,
-    ...modules,
-    ...modulesMaterial,
-    ...primengModule,
-    ...pipes,
-    ...directives,
-  ],
+  exports: [...components, ...modules, ...modulesMaterial, ...primengModule, ...pipes, ...directives],
 })
 export class SharedModule {}

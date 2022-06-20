@@ -19,11 +19,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    RouterModule.forChild(routes),
-    SharedModule,
-    EffectsModule.forFeature([MenuEffects]),
-    UiModule,
-  ],
+  imports: [RouterModule.forChild(routes), SharedModule, EffectsModule.forFeature([MenuEffects]), UiModule],
 })
 export class HomeModule {}

@@ -13,10 +13,7 @@
         "polyfills": "apps/wabi-poc-app/src/polyfills.ts",
         "tsConfig": "apps/wabi-poc-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/wabi-poc-app/src/favicon.ico",
-          "apps/wabi-poc-app/src/assets"
-        ],
+        "assets": ["apps/wabi-poc-app/src/favicon.ico", "apps/wabi-poc-app/src/assets"],
         "styles": ["apps/wabi-poc-app/src/styles.scss"],
         "scripts": []
       },
@@ -77,10 +74,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/wabi-poc-app/**/*.ts",
-          "apps/wabi-poc-app/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/wabi-poc-app/**/*.ts", "apps/wabi-poc-app/**/*.html"]
       }
     },
     "test": {
