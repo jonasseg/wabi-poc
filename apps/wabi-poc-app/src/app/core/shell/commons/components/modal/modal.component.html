@@ -1,0 +1,29 @@
+<div *ngIf="show">
+  <div class="modalMainContainer"></div>
+  <section class="cmp-modal">
+    <header class="cmp-modal__header">
+      <h2>
+        {{ title }}
+        <mat-icon (click)="closeModal()" class="cmp-modal__header--close">close</mat-icon>
+      </h2>
+      <p>{{ text }}</p>
+    </header>
+    <div class="cmp-modal__body">
+      <ng-container #bodyContainer></ng-container>
+    </div>
+    <div class="cmp-modal__footer">
+      <div *ngIf="spinner" class="cmp-modal__footer--spinner">
+        <p-progressSpinner *ngIf="spinner && spinner.load"></p-progressSpinner>
+        <span *ngIf="spinner && spinner.text"> {{ spinner.text }} </span>
+      </div>
+      <div
+        *ngFor="let button of buttons; let last = last"
+        class="cmp-modal__footer--btn"
+        [ngClass]="{ 'more-than-one': !last }"
+        (click)="closeModal(button.callBack)"
+      >
+        {{ button.text }}
+      </div>
+    </div>
+  </section>
+</div>

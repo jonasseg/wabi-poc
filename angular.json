@@ -2,6 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api": "apps/api",
+    "menu": "libs/menu",
+    "shared-material": "libs/shared/material",
+    "shared-primeng": "libs/shared/primeng",
+    "shared-util-app-config": "libs/shared/util/app-config",
+    "ui": "libs/ui",
     "wabi-poc-app": "apps/wabi-poc-app",
     "wabi-poc-app-e2e": "apps/wabi-poc-app-e2e"
   }

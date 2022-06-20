@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/primeng/src",
+  "prefix": "wabi-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/primeng"],
+      "options": {
+        "jestConfig": "libs/shared/primeng/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/primeng/**/*.ts",
+          "libs/shared/primeng/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
